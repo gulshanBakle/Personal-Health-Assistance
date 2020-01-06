@@ -1,0 +1,38 @@
+{% extends 'symptomChecker/base.html' %}
+{%load static%}
+{% block content %}
+<div id="container" class="container">
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="card" style="width: 18rem;"><br>
+                <img class="card-img-top" src="{%static 'symptomChecker/images/male-6.jpg'%}" alt="Card image cap">
+                <div class="card-body">
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of
+                        the card's content.</p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-8">
+            <div class="col-sm-6 offset-sm-3 text-center">
+                <h1 class="display-7">Choose Body parts from below</h1>
+                <div class="info-form"><br>
+                    <form action="{% url 'bodypart'%}" method="post">
+                        <br>
+                        {%csrf_token%}
+                        {{ bodypart_form }}
+                        <div class="card-footer">
+                            <button type="submit" class="btn btn-primary btn-lg" href="{% url 'symptom' %}">
+                                Submit !
+                            </button>
+                            <br>
+
+                        </div>
+                    </form>
+                </div>
+                <br>
+                <!--href="{% url 'symptom' %}"-->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,76 @@
+{% extends 'symptomChecker/base.html' %}
+{%load static%}
+{% block content%}
+<style>
+    .block {
+  display: block;
+  width: 100%;
+  border: none;
+  background-color: #346EFB;
+  padding: 14px 28px;
+  font-size: 32px;
+  cursor: pointer;
+  text-align: center;
+}
+
+</style>
+<div class="container" style="margin-top : 100px">
+    <div class="card-deck">
+        <div class="card">
+            <img class="card-img-top" src="{%static 'symptomChecker/images/body.png'%}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Select your region of discomfort</h5>
+                <p class="card-text">You can select multiple body parts, on clicking a list of symptoms would be
+                    displayed.</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Check out your health assistant now!</small>
+            </div>
+
+            <!--
+            <form action="{% url 'bodypart'%}" method="post">
+                {%csrf_token%}
+                {{ bodypart_form }}
+                <div class="card-footer">
+                        <button type="submit" value="submit"><br>
+                        <small class="text-muted">Now select symptoms</small>
+
+                </div>
+            </form>
+-->
+        </div>
+        <div class="card">
+            <img class="card-img-top" src="{%static 'symptomChecker/images/symtoms.jpg'%}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Select your discomforts</h5>
+                <p class="card-text">Select you symptoms from the list given on page and just click submit to see list
+                    of probable diseases .</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Check out your health assistant now!</small>
+            </div>
+
+        </div>
+
+        <div class="card">
+            <img class="card-img-top" src="{%static 'symptomChecker/images/doctors.png'%}" alt="Card image cap">
+            <div class="card-body">
+                <h5 class="card-title">Find doctors and use our medicine price comparator</h5>
+                <p class="card-text">Finding doctors your nearby coulb be atediius task. Health assistant comes with a
+                    list of doctors available near you with their location !!</p>
+            </div>
+            <div class="card-footer">
+                <small class="text-muted">Check out your health assistant now!</small>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="section-home home-reasons " style="background: lightgrey; height: 120px;">
+        <div class="container " style="color:black ; font-size: 50px;  font-family: fantasy; text-align: center;" > CHECK YOUR SYMPTOMS </div>
+        <center><a href="{% url 'bodypart' %}" style="color:black ;"> CHECK NOW </a></center>
+
+    </div> <!-- /.home-reasons -->
+{%endblock%}
+<!--<a href="{% url 'bodypart' %}" class="btn btn-outline-secondary btn-sm" role="button">
+    Check up your symptoms !
+</a>-->

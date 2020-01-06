@@ -1,0 +1,161 @@
+{% extends 'symptomChecker/base.html' %}
+{%load static%}
+{% block content%}
+
+<div id="container" class="container">
+    <div class="row">
+        <div class="col-sm-6">
+            <div class="row text-black">
+                <div class="col-sm-6 offset-sm-3 text-center"><br>
+                    <h1 class="display-7">Choose your symptoms</h1>
+                    <div class="info-form">
+                        <form action="{%url 'symptom' %}" class="form-inlin justify-content-center" method="post">
+                            {%csrf_token%}
+                            {{ symptom_form }}
+                            <br>
+                            <button type="submit" class="btn btn-success ">okay, go!</button>
+                        </form>
+                    </div>
+                    <br>
+
+
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6">
+            <br>
+            <div id="accordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne"
+                                    aria-expanded="true" aria-controls="collapseOne">
+                                General Symptoms
+                            </button>
+                        </h5>
+                    </div>
+
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                        <div class="card-body">
+                            asthenia;sweat;fever;chills;malaise;fatigue;infection;pain;pruritus ;swelling ;apyrexial ;infection ;hyponatremia ;hemodynamically stable ;monoclonal;
+                            fatigue; anemia; sputum purulent; bedridden;hot flush;decreased body weight;malignant neoplasms;primary malignant neoplasm; redness
+                            ;scratch marks; throbbing sensation quality; unwell; dehydration; myoclonus; gurgle; catatonia; ache; disturbed family; hypersomnia; exhaustion; overweight; obesity
+                            shortness of breath;orthopnea;jugular venous distention;rale;dyspnea;cough;wheezing
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo"
+                                    aria-expanded="false" aria-controls="collapseTwo">
+                                Head symptoms
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                        <div class="card-body">
+                            dizziness;vertigo;fall;unresponsiveness;weepiness;feeling suicidal;suicidal;hallucinations auditory;feeling hopeless;weepiness;sleeplessness;motor retardation;irritable mood;blackout;mood depressed;hallucinations visual;worry;agitation
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingThree">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree"
+                                    aria-expanded="false" aria-controls="collapseThree">
+                                Ear Symptoms
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                        <div class="card-body">
+                            hallucinations auditory;verbal auditory hallucinations;hyperacusis;tinnitus
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFour">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour"
+                                    aria-expanded="false" aria-controls="collapseFour">
+                                Nose Symptoms
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                        <div class="card-body">
+                            labored breathing; anosmia; snuffle; stridor;sniffle;stuffy nose;barking cough;rapid shallow breathing;noisy respiration
+                            ;nasal discharge present;posteriorÂ rhinorrhea;nasal flaring;sneeze;gasping for breath
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingFive">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFive"
+                                    aria-expanded="false" aria-controls="collapseFive">
+                                Stomach Symptoms
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+                        <div class="card-body">
+                            nausea;vomiting;gastroesophageal reflux disease;systemic infection;gurgle;hepatitis C;decompensation;hepatomegaly;
+                            ulcer peptic;gastritis;nausea and vomiting;abdominal bloating;hyperemesis;retch;gastroenteritis;hernia hiatal
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingSix">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSix"
+                                    aria-expanded="false" aria-controls="collapseSix">
+                                Back Symptoms
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+                        <div class="card-body">
+                            unsteady gait;muscle hypotonia;hyperhidrosis disorder;hirsutism;bradykinesia;polymyalgia;neuropathy;low back pain
+
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingSeven">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseSeven"
+                                    aria-expanded="false" aria-controls="collapseSeven">
+                                 Special Symptoms
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+                        <div class="card-body">
+                            pain chest;shortness of breath;dizziness;asthenia;fall;syncope;vertigo;sweat;sweating;increased palpitation;nausea;angina pectoris;pressure chest
+                            asthenia;labored breathing;mental status changes;nausea;orthopnea;pain chest;polydypsia;polyuria;rale;shortness of breath;sweat;sweating increased;vomiting;vertigo;unresponsiveness
+                            cough;fever;decreased translucency;shortness of breath;rale;productive cough;pleuritic pain;yellow sputum;breath sounds decreased;chill;rhonchus;green sputum;non-productive cough;wheezing;haemoptysis;distress respiratory
+                            ;malaise;night sweat
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+
+<form action="{% url 'bodypart'%}" method="post">
+    {%csrf_token%}
+    {{ bodypart_form}}
+    <div class="card-footer">
+        <button type="submit" value="submit"><br>
+            <small class="text-muted">Now select symptoms</small>
+
+    </div>
+</form>

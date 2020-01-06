@@ -1,0 +1,23 @@
+{% extends 'symptomChecker/base.html' %}
+{%load static%}
+{% block content%}
+<div class="container" style="margin-top:50px">
+    <table class="table table-striped" style="text-align : center">
+        <thead>
+        <tr>
+            <th scope="col">Diseases</th>
+            <th scope="col">Percentage probability</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for x in z %}
+        <tr>
+            <td>{{x.0}}</td>
+            <td>{{x.1}}</td>
+        </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+</div>
+{% endblock%}
